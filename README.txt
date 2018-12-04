@@ -1,0 +1,1 @@
+This project aims to practice data structure and algorithms.
