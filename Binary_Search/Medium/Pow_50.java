@@ -1,4 +1,4 @@
-package Leetcode.Binary_Search.Easy;
+package Leetcode.Binary_Search.Medium;
 
 public class Pow_50 {
 

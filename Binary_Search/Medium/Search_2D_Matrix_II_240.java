@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.Binary_Search.Medium;
 
 public class Search_2D_Matrix_II_240 {
 
