@@ -4,3 +4,5 @@ Tag:
     Binary Search:
         475 Heaters, binary search return index where the target should be placed
         287 Find the Duplicate Number, think of array as linked list, runner technique
+        162 Find Peak Element, very smart using binary search to reduce time complexity
+       *34  Find First and Last Element in Sorted Array, binary search middle point

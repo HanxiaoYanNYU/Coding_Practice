@@ -6,11 +6,9 @@ import Leetcode.Binary_Search.Medium.*;
 public class Main {
 
     public static void main(String[] args) {
-        int[][] a = {{1,2,3},{4,5,6}};
-        int row = a.length;
-        int col = a[0].length;
-
-        System.out.println(row);
-        System.out.println(col);
+        int[] re = Find_First_Last_Elements_in_Sorted_Array_34.searchRange(new int[]{2,2}, 2);
+        for (Integer i : re) {
+            System.out.println(i);
+        }
     }
 }
