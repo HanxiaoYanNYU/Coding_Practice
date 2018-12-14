@@ -13,7 +13,7 @@ public class Flower_Slot_OA {
      * @param M
      * @return
      */
-    public static int solution(int[] A, int K, int M){
+    public static int solution_0(int[] A, int K, int M) {
         int[] flowers = new int[A.length + 2];
         int count = 0, res = -1;
         for (int i = 0; i < A.length; i++){
@@ -47,5 +47,37 @@ public class Flower_Slot_OA {
             if (count == M) res = i + 1;
         }
         return res;
+    }
+
+    /**
+     * Brute force, my solution
+     *
+     * @param A
+     * @param K
+     * @param M
+     * @return
+     */
+    public static int solution(int[] A, int K, int M) {
+        if (K > A.length) return -1;
+        if (M == 1) return A.length;
+
+        char[] blossom = new char[A.length];
+        for (int i = 0; i < blossom.length; i++) { blossom[i] = '1'; }
+
+        for (int i = A.length - 1; i >= 0; i--) {
+            blossom[A[i] - 1] = '0';
+            String[] slots = new String(blossom).split("0", -1);
+            int m = 0;
+            for (String s : slots) {
+                if (s.length() >= K) m++;
+                else if (s.length() > 0) {
+                    m = -1;
+                    break;
+                }
+            }
+            if (m == M) return i;
+        }
+
+        return -1;
     }
 }
