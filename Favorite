@@ -6,3 +6,4 @@ Tag:
         287 Find the Duplicate Number, think of array as linked list, runner technique
         162 Find Peak Element, very smart using binary search to reduce time complexity
        *34  Find First and Last Element in Sorted Array, binary search middle point
+       *378 Kth Smallest Element in Sorted Matrix, using binary search in such a smart way
