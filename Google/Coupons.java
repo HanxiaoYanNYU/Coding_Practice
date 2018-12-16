@@ -6,7 +6,7 @@ import java.util.Map;
 public class Coupons {
 
     public static int solution(int[] coupons) {
-        if (coupons.length <= 1) return -1;
+        if (coupons == null || coupons.length <= 1) return -1;
 
         Map<Integer, Integer> couponPosition = new HashMap<>();
         int len = Integer.MAX_VALUE;
