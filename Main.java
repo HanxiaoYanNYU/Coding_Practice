@@ -12,7 +12,8 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        int res = Coupons.solution(new int[]{3,6,1,9});
+
+        boolean res = Search_in_Rotated_Sorted_Array_II_81.search(new int[]{2,5,6,0,0,1,2}, 3);
         System.out.println(res);
     }
 }
