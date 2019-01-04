@@ -12,17 +12,13 @@ public class Search_2D_Matrix_II_240 {
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix.length == 0) return false;
 
-        int row = matrix.length;
-        int col = matrix[0].length;
-
-        int i = 0; int j = col - 1;
-        while (i<row && j>=0) {
-            int value = matrix[i][j];
-            if (value == target) return true;
-            else if (value < target) i++;
-            else j--;
+        int row = 0;
+        int col = matrix[0].length - 1;
+        while (row < matrix.length && col >= 0) {
+            if (matrix[row][col] == target) return true;
+            else if (matrix[row][col] < target) row++;
+            else col--;
         }
-
         return false;
     }
 }

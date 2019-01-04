@@ -34,4 +34,24 @@ public class Find_Peak_Element_162 {
 
         return -1;
     }
+
+    /**
+     * My updated solution. Use binary search, the while condition is "left < right" rather than "<="
+     *
+     * @param nums
+     * @return
+     */
+    public static int findPeakElement_updated(int[] nums) {
+        if (nums == null || nums.length == 0) return -1;
+
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (mid > 0 && nums[mid-1] > nums[mid]) right = mid - 1;
+            else if (nums[mid] < nums[mid+1]) left = mid + 1;
+            else return mid; // nums[mid-1] < nums[mid] && nums[mid] > nums[mid+1], which means mid is a peak
+        }
+        return left;
+    }
 }
