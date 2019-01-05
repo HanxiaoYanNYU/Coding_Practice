@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.BFS.Easy;
 
 import java.util.*;
 

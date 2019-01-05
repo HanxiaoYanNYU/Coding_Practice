@@ -1,4 +1,4 @@
-package Leetcode;
+package Leetcode.Binary_Search.Medium;
 
 import java.util.ArrayList;
 import java.util.List;

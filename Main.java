@@ -1,5 +1,7 @@
 package Leetcode;
 
+import Leetcode.BFS.Medium.Perfect_Squares_279;
+import Leetcode.BFS.Medium.Word_Ladder_127;
 import Leetcode.Binary_Search.Easy.*;
 import Leetcode.Binary_Search.Medium.*;
 import Leetcode.Google.*;
@@ -9,7 +11,14 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        //int res = Main.searchInsert(new int[]{1,3,5,6},2);
-        //System.out.println(res);
+        List<String> list = new ArrayList<>();
+        list.add("hot");
+        list.add("dot");
+        list.add("dog");
+        list.add("lot");
+        list.add("log");
+        list.add("cog");
+        int res = Word_Ladder_127.ladderLength("hit", "cog", list);
+        System.out.println(res);
     }
 }
