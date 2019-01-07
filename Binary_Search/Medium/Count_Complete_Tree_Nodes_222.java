@@ -20,9 +20,14 @@ public class Count_Complete_Tree_Nodes_222 {
 
         while (!q.isEmpty()) {
             TreeNode curr = q.poll();
-            if (curr.left != null) q.add(curr.left);
-            if (curr.right != null) q.add(curr.right);
-            count++;
+            if (curr.left != null) {
+                q.add(curr.left);
+                count++;
+            }
+            if (curr.right != null) {
+                q.add(curr.right);
+                count++;
+            }
         }
         return count;
     }
@@ -55,6 +60,48 @@ public class Count_Complete_Tree_Nodes_222 {
             height++;
         }
         return height;
+    }
+
+    /**
+     * My solution
+     *
+     * @param root
+     * @return
+     */
+    public static int countNodes_my(TreeNode root) {
+        if (root == null) return 0;
+
+        int[] level = countLevel(root.left);
+        int leftLevel = level[0];
+        int rightLevel = level[1];
+        if (leftLevel == -1) return 1;
+        else if (leftLevel == rightLevel) {
+            // Left subtree is complete
+            return (int)Math.pow(2, leftLevel) + countNodes_my(root.right);
+        } else {
+            // Right subtree is complete
+            return (int)Math.pow(2, rightLevel) + countNodes_my(root.left);
+        }
+    }
+
+    public static int[] countLevel(TreeNode root) {
+        if (root == null) return new int[]{-1, -1};
+
+        TreeNode left = root;
+        int leftCount = 0;
+        while (left != null) {
+            leftCount++;
+            left = left.left;
+        }
+
+        TreeNode right = root;
+        int rightCount = 0;
+        while (right != null) {
+            rightCount++;
+            right = right.right;
+        }
+
+        return new int[]{leftCount, rightCount};
     }
 
     public class TreeNode {

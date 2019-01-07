@@ -19,11 +19,6 @@ public class Main {
         list.add("log");
         list.add("cog");
         int res = Word_Ladder_127.ladderLength("hit", "cog", list);
-        System.out.println(res);
-
-        Set<Integer> set = new HashSet<>();
-        for (Integer s : set) {
-
-        }
+        System.out.println((int)Math.pow(2,3));
     }
 }
