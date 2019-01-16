@@ -9,7 +9,7 @@ public class Intersection_of_Two_Arrays_II_350 {
 
         Arrays.sort(nums1);
         Arrays.sort(nums2);
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<Integer>();
 
         int i = 0; int j = 0;
         while (i < nums1.length && j < nums2.length) {

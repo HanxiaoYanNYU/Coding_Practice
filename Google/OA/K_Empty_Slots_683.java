@@ -1,4 +1,4 @@
-package Leetcode.Google;
+package Leetcode.Google.OA;
 
 public class K_Empty_Slots_683 {
 

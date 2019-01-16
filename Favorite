@@ -12,7 +12,14 @@ Tag:
 
     BFS:
         199 Binary Tree Right Side View, wisely use DFS and level to traverse binary tree
+        207 Course Schedule, topological sort
+        542 01 Matrix, remember BFS is a good method to solve shortest path problem
+        310 Minimum Height Tree
+        785 Is Graph Bipartite, coloring map
+        787 Cheapest Flights within K Stops
 
     DP:
 
     Array:
+
+    Tree:

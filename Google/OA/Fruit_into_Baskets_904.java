@@ -1,4 +1,4 @@
-package Leetcode.Google;
+package Leetcode.Google.OA;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -23,7 +23,7 @@ public class Heaters_475 {
      * @return
      */
     public static int findRadius(int[] houses, int[] heaters) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<Integer>();
 
         for (Integer h : houses) {
             int left = 0;
