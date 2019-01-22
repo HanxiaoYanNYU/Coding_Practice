@@ -9,6 +9,8 @@ Tag:
        *378 Kth Smallest Element in Sorted Matrix, using binary search in such a smart way
 
     DFS:
+        98 Validate Binary Search Tree, iterative inorder traverse
+        547 Friend Circles, union find
 
     BFS:
         199 Binary Tree Right Side View, wisely use DFS and level to traverse binary tree

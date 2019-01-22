@@ -10,8 +10,6 @@ public class Decode_String_394 {
      * @return
      */
     public static String decodeString(String s) {
-        if (s == null || s.length() == 0) return s;
-
         char[] c = s.toCharArray();
 
         Stack<Character> stack = new Stack<>();
@@ -20,12 +18,12 @@ public class Decode_String_394 {
         for (int i = 0; i < c.length; i++) {
             if (c[i] == ']') {
                 String repeat = "";
-                while (stack.peek() != '[' && stack.peek() >= 'a' && stack.peek() <= 'z' || stack.peek() >= 'A' && stack.peek() <= 'Z') {
+                while (stack.peek() != '[' && Character.isLetter(stack.peek())) {
                     repeat = stack.pop() + repeat;
                 }
                 stack.pop(); // pop '['
                 String num = "";
-                while (!stack.empty() && stack.peek() >= '0' && stack.peek() <= '9') {
+                while (!stack.empty() && Character.isDigit(stack.peek())) {
                     num = stack.pop() + num;
                 }
                 String sum = "";
@@ -44,5 +42,51 @@ public class Decode_String_394 {
             res += chars;
         }
         return res;
+    }
+
+    /**
+     * Leetcode Solution
+     * @param s
+     * @return
+     */
+    public static String decodeString_lc(String s) {
+        if (s == null || s.length() == 0) return s;
+
+        Stack<String> repeat = new Stack<>();
+        Stack<String> letters = new Stack<>();
+
+        letters.push("");
+        int i = 0;
+        char[] c = s.toCharArray();
+
+        while (i < s.length()) {
+            if (Character.isDigit(c[i])) {
+                String num = "" + c[i];
+                while (i + 1 < s.length() && Character.isDigit(c[i + 1])) {
+                    i++;
+                    num += c[i];
+                }
+                repeat.push(num);
+                letters.push(""); // Each repeat number should be paired to a char sequence
+            } else if (Character.isLetter(c[i])) {
+                String preSequence = letters.pop();
+                letters.push(preSequence + c[i]);
+            } else if (c[i] == ']') {
+                String concat = "";
+                String repeatSequence = letters.pop();
+                int repeatTimes = Integer.parseInt(repeat.pop());
+                while (repeatTimes > 0) {
+                    concat += repeatSequence;
+                    repeatTimes--;
+                }
+
+                String preSequence = letters.pop();
+                letters.push(preSequence + concat);
+            }
+
+            i++;
+        }
+
+        return letters.pop();
     }
 }
