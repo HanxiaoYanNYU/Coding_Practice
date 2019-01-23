@@ -11,6 +11,10 @@ Tag:
     DFS:
         98 Validate Binary Search Tree, iterative inorder traverse
         547 Friend Circles, union find
+        109 Convert Sorted List to BST
+        337 House Robber III, leetcode solution III is brilliant (https://leetcode.com/problems/house-robber-iii/discuss/79330/Step-by-step-tackling-of-the-problem)
+        106 Construct Binary Tree from Inorder and post order Traversal
+        332 Reconstruct Itinerary, brilliant use of post order traverse
 
     BFS:
         199 Binary Tree Right Side View, wisely use DFS and level to traverse binary tree
