@@ -15,9 +15,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String[][] M = {{"MUC","LHR"},{"JFK","MUC"},{"SFO","SJC"},{"LHR","SFO"}};
-        List<String> res = null;
-        System.out.println(res);
+        boolean[] a = new boolean[1];
+        System.out.println(a[0]);
 //
 //        Queue<String> q = new LinkedList<>();
 //
@@ -29,9 +28,7 @@ public class Main {
 //        Set<String> set = new HashSet<>();
 //
         List<Integer> l = new ArrayList<>();
-        l.add(1);
-        l.set(0, l.get(0) + 1);
-        Collections.reverse(l);
+
 
 
 //        PriorityQueue<String> pq = new PriorityQueue<>(new Comparator<String>() {
