@@ -1,6 +1,8 @@
 package Leetcode.Array;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Arrays_Partition_I_561 {
 
