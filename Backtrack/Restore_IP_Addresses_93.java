@@ -1,10 +1,17 @@
 package Leetcode.Backtrack;
 
+import com.sun.istack.internal.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Restore_IP_Addresses_93 {
 
+    /**
+     * My solution, beat 91%
+     * @param s
+     * @return
+     */
     public List<String> restoreIpAddresses(String s) {
         List<String> res = new ArrayList<>();
         if (s == null || s.length() < 4 || s.length() > 12) return res;
@@ -14,7 +21,7 @@ public class Restore_IP_Addresses_93 {
 
         for (List<Integer> dot : dots) {
             String ip = getIp(s, dot);
-            if (ip != "") res.add(ip);
+            if (!ip.equals("")) res.add(ip);
         }
         return res;
     }
@@ -26,6 +33,8 @@ public class Restore_IP_Addresses_93 {
         }
 
         for (int i = start; i <= limit; i++) {
+            // backtracking 过程中记得要剪枝，不然会很慢
+            if (track.size() == 0 && i>3 || track.size() != 0 && i-track.get(track.size()-1)>3) break;
             track.add(i);
             findDots(dots, track, i+1, limit);
             track.remove(track.size()-1);
@@ -46,7 +55,7 @@ public class Restore_IP_Addresses_93 {
         return "";
     }
 
-    private boolean isValid(String ip) {
+    private boolean isValid(@NotNull String ip) {
         if (ip.length() > 1 && ip.charAt(0) == '0' || Integer.parseInt(ip) > 255) return false;
         return true;
     }
