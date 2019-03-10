@@ -1,7 +1,5 @@
 package Leetcode.Backtrack;
 
-import com.sun.istack.internal.NotNull;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +53,7 @@ public class Restore_IP_Addresses_93 {
         return "";
     }
 
-    private boolean isValid(@NotNull String ip) {
+    private boolean isValid(String ip) {
         if (ip.length() > 1 && ip.charAt(0) == '0' || Integer.parseInt(ip) > 255) return false;
         return true;
     }
