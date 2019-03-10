@@ -20,3 +20,4 @@ public class Two_Sum_1 {
         System.out.println(res);
     }
 }
+
