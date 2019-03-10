@@ -18,6 +18,8 @@ public class Two_Sum_1 {
         Two_Sum_1 t = new Two_Sum_1();
         int[] res = t.twoSum(new int[]{1,2,3,4}, 7);
         System.out.println(res);
+
+
     }
 }
 
